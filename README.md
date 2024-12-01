@@ -8,3 +8,5 @@ App renders a list of beers fetched form an external api.
 ```
 yarn install && yarn dev
 ```
+
+App will be running on http://localhost:3000/
