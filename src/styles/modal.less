@@ -1,0 +1,146 @@
+@import "theme.less";
+
+#modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.4);
+
+  > #modal-content {
+    background-color: @bgSecondary;
+    margin: 15% auto;
+    padding: 20px;
+    max-width: 400px;
+    min-height: 240px;
+    border-radius: 0.5rem;
+    box-sizing: border-box;
+    @media screen and (max-width: 768px) {
+      max-width: calc(100vw - 2rem);
+    }
+    > .top-container {
+      > .circle {
+        min-width: 200px;
+        width: 200px;
+        min-height: 200px;
+        border-radius: 50%;
+        display: flex;
+        border: 10px solid @bgPrimary;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        overflow: hidden;
+        shape-outside: circle(50%);
+        margin-right: 10px;
+        float: left;
+
+        > img {
+          height: 160px;
+          object-fit: contain;
+          padding: 20px;
+          margin: 0;
+          box-sizing: border-box;
+        }
+
+        > p {
+          background: @bgPrimary;
+          color: @textSecondary;
+          position: absolute;
+          bottom: 0;
+          left: 50%;
+          transform: translateX(-50%);
+          font-size: 16px;
+          margin: 0;
+          width: 100%;
+          text-align: center;
+          padding: 4px 0;
+        }
+
+        > .ibu {
+          position: absolute;
+          left: 10px;
+          top: 50%;
+          transform: translateY(-50%);
+          text-align: center;
+          > p {
+            margin: 0;
+          }
+        }
+      }
+    }
+
+    > .bottom-container {
+      clear: both;
+      padding-top: 1rem;
+      display: flex;
+      justify-content: space-between;
+
+      > .title {
+        width: 200;
+        text-align: center;
+        margin: 0;
+      }
+    }
+  }
+
+  > .close {
+    font-size: 28px;
+    position: absolute;
+    font-weight: bold;
+    padding: 10px;
+    width: 20px;
+    height: 20px;
+    background-color: @bgSecondary;
+    border-radius: 100%;
+    top: 10px;
+    right: 10px;
+    &:hover,
+    &:focus {
+      color: @textPrimary;
+      cursor: pointer;
+    }
+  }
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+
+  > .dropbtn {
+    background-color: @bgPrimary;
+    color: @textSecondary;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+  }
+
+  > .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: @bgSecondary;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+
+    > a {
+      color: @textPrimary;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+    }
+
+    > a:hover {
+      background-color: @bgPrimary;
+      color: @textSecondary;
+    }
+  }
+
+  &:hover > .dropdown-content {
+    display: block;
+  }
+}

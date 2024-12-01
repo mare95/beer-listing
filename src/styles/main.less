@@ -1,0 +1,52 @@
+@import "theme.less";
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  width: 100%;
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  color: @textPrimary;
+}
+
+#error {
+  width: 100%;
+  margin-top: 3rem;
+  text-align: center;
+  // initially hide the error
+  display: none;
+}
+
+#root {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 1rem;
+  width: 100%;
+  padding: 0 1rem;
+  margin: 3rem auto 3rem auto;
+  box-sizing: border-box;
+
+  // iPad responsiveness
+  @media (min-width: 768px) and (max-width: 1024px) {
+    @media (orientation: landscape) {
+      grid-template-columns: repeat(7, 1fr);
+    }
+
+    @media (orientation: portrait) {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+
+  @media (max-width: 767px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (max-width: 480px) {
+    grid-template-columns: 1fr;
+  }
+}
